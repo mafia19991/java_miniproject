@@ -4,7 +4,9 @@ import java.awt.Desktop;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class FirstSwingExample {
     Desktop desk = Desktop.getDesktop();
@@ -14,7 +16,7 @@ public class FirstSwingExample {
         JFrame f = new JFrame("Recipe Book");// creating instance of JFrame
         f.getContentPane().setBackground(Color.decode("#85efff"));
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(460, 500);// 400 width and 500 height
+        f.setSize(460, 500);// 460 width and 500 height
         f.setLayout(null);// using no layout managers
         f.setResizable(false);
 
@@ -47,13 +49,149 @@ public class FirstSwingExample {
                 breakfastFrame.setLayout(null);// using no layout managers
                 breakfastFrame.setResizable(false);
 
+                JButton breakfast_item1 = new JButton(new ImageIcon("Dosa.png"));
+                breakfast_item1.setBounds(5, 0, 450, 113);
+                breakfast_item1.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/KPFAAjONfmk?si=epkT76TI9GC21oBS";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                breakfastFrame.add(breakfast_item1);
+
+                JButton breakfast_item2 = new JButton(new ImageIcon("upma.png"));
+                breakfast_item2.setBounds(5, 115, 450, 113);
+                breakfast_item2.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/cAoYsLXUKGI?si=nnocG-FKp4-GNUF-";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                breakfastFrame.add(breakfast_item2);
+
+                JButton breakfast_item3 = new JButton(new ImageIcon("pohe.png"));
+                breakfast_item3.setBounds(5, 231, 450, 113);
+                breakfast_item3.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/2_BkfGRcx3o?si=CITOowAO7CC-4roT";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                breakfastFrame.add(breakfast_item3);
+
+                JButton breakfast_item4 = new JButton(new ImageIcon("dhokla.png"));
+                breakfast_item4.setBounds(5, 346, 450, 113);
+                breakfast_item4.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/w_2eb9uaXns?si=S8eLhW1oF_hOh4Sq";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                breakfastFrame.add(breakfast_item4);
+
                 breakfastFrame.setVisible(true);
             }
 
         });
 
-        // ---------------------------lunch button
-        // ----------------------------------------------------------
+        // ---------------------------lunch
+        // button----------------------------------------------------------
 
         JButton lunch = new JButton("Lunch");
         lunch.setBounds(120, 3, 100, 40);
@@ -80,6 +218,142 @@ public class FirstSwingExample {
                 lunchFrame.setSize(460, 500);// 400 width and 500 height
                 lunchFrame.setLayout(null);// using no layout managers
                 lunchFrame.setResizable(false);
+
+                JButton lunch_item1 = new JButton(new ImageIcon("dalkhichdi.png"));
+                lunch_item1.setBounds(5, 0, 450, 113);
+                lunch_item1.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/SYWtizV5oCI?si=3AEt3vog1f1x8Yrx";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                lunchFrame.add(lunch_item1);
+
+                JButton lunch_item2 = new JButton(new ImageIcon("noodles.png"));
+                lunch_item2.setBounds(5, 115, 450, 113);
+                lunch_item2.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/u3vuq3zaR20?si=NPU8eDJ87kn-1j2p";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                lunchFrame.add(lunch_item2);
+
+                JButton lunch_item3 = new JButton(new ImageIcon("momos.png"));
+                lunch_item3.setBounds(5, 231, 450, 113);
+                lunch_item3.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/UsIoJ9TzISU?si=_n5osZvZd4UNxU74";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                lunchFrame.add(lunch_item3);
+
+                JButton lunch_item4 = new JButton(new ImageIcon("pavbhaji.png"));
+                lunch_item4.setBounds(5, 346, 450, 113);
+                lunch_item4.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Define the URL you want to open
+                        String url = "https://youtu.be/sAnPUIvPc1I?si=vfC768AvNucVO3GC";
+
+                        try {
+                            // Create a URI object from the URL string
+                            URI uri = new URI(url);
+
+                            // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                            if (Desktop.isDesktopSupported()) {
+                                Desktop desktop = Desktop.getDesktop();
+
+                                // Check if the browser is supported (not all platforms have a registered
+                                // browser)
+                                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                                    // Open the URL in the default web browser
+                                    desktop.browse(uri);
+                                } else {
+                                    System.out.println("No browser support");
+                                }
+                            } else {
+                                System.out.println("Desktop not supported");
+                            }
+                        } catch (IOException | URISyntaxException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                lunchFrame.add(lunch_item4);
 
                 lunchFrame.setVisible(true);
             }
@@ -113,6 +387,22 @@ public class FirstSwingExample {
                 dinnerframe.setSize(460, 500);// 400 width and 500 height
                 dinnerframe.setLayout(null);// using no layout managers
                 dinnerframe.setResizable(false);
+                JButton dinner_item1 = new JButton(new ImageIcon("rajma.png"));
+                dinner_item1.setBounds(5, 0, 450, 113);
+                dinnerframe.add(dinner_item1);
+
+                JButton dinner_item2 = new JButton(new ImageIcon("chickenmasala.png"));
+                dinner_item2.setBounds(5, 115, 450, 113);
+                dinnerframe.add(dinner_item2);
+
+                JButton dinner_item3 = new JButton(new ImageIcon("koffta.png"));
+                dinner_item3.setBounds(5, 231, 450, 113);
+                dinnerframe.add(dinner_item3);
+
+                JButton dinner_item4 = new JButton(new ImageIcon("prawn.png"));
+                dinner_item4.setBounds(5, 346, 450, 113);
+                dinnerframe.add(dinner_item4);
+                
 
                 dinnerframe.setVisible(true);
             }
@@ -134,8 +424,8 @@ public class FirstSwingExample {
             }
         });
 
-        // ----------------------------CREATING WINDOW FOR SWEET
-        // -------------------------------------
+        // ----------------------------CREATING WINDOW FOR
+        // SWEET-------------------------------------
 
         sweet.addActionListener(new ActionListener() {
             @Override
@@ -146,6 +436,25 @@ public class FirstSwingExample {
                 sweetframe.setSize(460, 500);// 400 width and 500 height
                 sweetframe.setLayout(null);// using no layout managers
                 sweetframe.setResizable(false);
+
+                JButton sweet_item1 = new JButton(new ImageIcon("modak.png"));
+                sweet_item1.setBounds(5, 0, 450, 113);
+                sweetframe.add(sweet_item1);
+
+                JButton sweet_item2 = new JButton(new ImageIcon("gulabjam.png"));
+                sweet_item2.setBounds(5, 115, 450, 113);
+                sweetframe.add(sweet_item2);
+
+                JButton sweet_item3 = new JButton(new ImageIcon("pedaa.png"));
+                sweet_item3.setBounds(5, 231, 450, 113);
+                sweetframe.add(sweet_item3);
+
+                JButton sweet_item4 = new JButton(new ImageIcon("rasgulla.png"));
+                sweet_item4.setBounds(5, 346, 450, 113);
+                sweetframe.add(sweet_item4);
+                
+
+
 
                 sweetframe.setVisible(true);
             }
@@ -158,18 +467,35 @@ public class FirstSwingExample {
         banner.setBounds(9, 46, 440, 150);
         f.add(banner);
         banner.addActionListener(new ActionListener() {
-            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Define the URL you want to open
+                String url = "https://youtu.be/l7Efb-HjDPU?si=regUWGLVTK5qgwLo";
 
-            public static void FirstSwingExample(String urlString) {
                 try {
-                    Desktop.getDesktop().browse(new URL(urlString).toURI());
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    // Create a URI object from the URL string
+                    URI uri = new URI(url);
+
+                    // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop desktop = Desktop.getDesktop();
+
+                        // Check if the browser is supported (not all platforms have a registered
+                        // browser)
+                        if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                            // Open the URL in the default web browser
+                            desktop.browse(uri);
+                        } else {
+                            System.out.println("No browser support");
+                        }
+                    } else {
+                        System.out.println("Desktop not supported");
+                    }
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
                 }
             }
-
-
         });
+
         // -------------label--------
         JLabel l1;
         l1 = new JLabel("Popular Recipes");
@@ -191,6 +517,35 @@ public class FirstSwingExample {
         dumbiryani.setBounds(5, 239, 146, 214);
         dumbiryani.setBackground(Color.decode("#85efff"));
         dumbiryani.setBorderPainted(false);
+        dumbiryani.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Define the URL you want to open
+                String url = "https://youtu.be/jjmR9C_X7LY?si=ofs8zgiLyAT4-wFb";
+
+                try {
+                    // Create a URI object from the URL string
+                    URI uri = new URI(url);
+
+                    // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop desktop = Desktop.getDesktop();
+
+                        // Check if the browser is supported (not all platforms have a registered
+                        // browser)
+                        if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                            // Open the URL in the default web browser
+                            desktop.browse(uri);
+                        } else {
+                            System.out.println("No browser support");
+                        }
+                    } else {
+                        System.out.println("Desktop not supported");
+                    }
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
         f.add(dumbiryani);
 
         JButton pannertikka = new JButton(new ImageIcon(
@@ -198,6 +553,35 @@ public class FirstSwingExample {
         pannertikka.setBounds(156, 239, 146, 214);
         pannertikka.setBackground(Color.decode("#85efff"));
         pannertikka.setBorderPainted(false);
+        pannertikka.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Define the URL you want to open
+                String url = "https://youtu.be/5wbMJFZfBBc?si=eADPpPn9rqgL5_Qt";
+
+                try {
+                    // Create a URI object from the URL string
+                    URI uri = new URI(url);
+
+                    // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop desktop = Desktop.getDesktop();
+
+                        // Check if the browser is supported (not all platforms have a registered
+                        // browser)
+                        if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                            // Open the URL in the default web browser
+                            desktop.browse(uri);
+                        } else {
+                            System.out.println("No browser support");
+                        }
+                    } else {
+                        System.out.println("Desktop not supported");
+                    }
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
         f.add(pannertikka);
 
         JButton idli = new JButton(new ImageIcon(
@@ -205,6 +589,35 @@ public class FirstSwingExample {
         idli.setBounds(308, 239, 146, 214);
         idli.setBackground(Color.decode("#85efff"));
         idli.setBorderPainted(false);
+        idli.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Define the URL you want to open
+                String url = "https://youtu.be/Ayo80PIb-Qg?si=5CoE9iiT5iS-V_T8";
+
+                try {
+                    // Create a URI object from the URL string
+                    URI uri = new URI(url);
+
+                    // Check if the Desktop class is supported (works on Windows, macOS, and Linux)
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop desktop = Desktop.getDesktop();
+
+                        // Check if the browser is supported (not all platforms have a registered
+                        // browser)
+                        if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                            // Open the URL in the default web browser
+                            desktop.browse(uri);
+                        } else {
+                            System.out.println("No browser support");
+                        }
+                    } else {
+                        System.out.println("Desktop not supported");
+                    }
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
         f.add(idli);
 
         f.setVisible(true);// making the frame visible
