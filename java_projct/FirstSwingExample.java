@@ -44,10 +44,10 @@ public class FirstSwingExample {
                 JFrame breakfastFrame = new JFrame("Breakfast");
                 breakfastFrame.getContentPane().setBackground(Color.decode("#85efff"));
                 breakfastFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                breakfastFrame.setSize(460, 500);// 400 width and 500 height
+                breakfastFrame.setSize(460, 550);// 400 width and 500 height
                 breakfastFrame.setLayout(null);// using no layout managers
                 breakfastFrame.setResizable(false);
-                
+                f.setVisible(false);
 
                 JButton breakfast_item1 = new JButton(new ImageIcon("Dosa.png"));
                 breakfast_item1.setBounds(5, 0, 450, 113);
@@ -184,7 +184,16 @@ public class FirstSwingExample {
                 });
 
                 breakfastFrame.add(breakfast_item4);
-
+                JButton back = new JButton("BACK");
+                back.setBounds(2, 462, 453, 48);
+                breakfastFrame.add(back);
+                back.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        f.setVisible(true);
+                        breakfastFrame.setVisible(false);
+                    }
+                });
                 breakfastFrame.setVisible(true);
             }
 
@@ -215,10 +224,10 @@ public class FirstSwingExample {
                 JFrame lunchFrame = new JFrame("Lunch");
                 lunchFrame.getContentPane().setBackground(Color.decode("#85efff"));
                 lunchFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                lunchFrame.setSize(460, 500);// 400 width and 500 height
+                lunchFrame.setSize(460, 550);// 400 width and 500 height
                 lunchFrame.setLayout(null);// using no layout managers
                 lunchFrame.setResizable(false);
-                
+                f.setVisible(false);
 
                 JButton lunch_item1 = new JButton(new ImageIcon("dalkhichdi.png"));
                 lunch_item1.setBounds(5, 0, 450, 113);
@@ -355,6 +364,17 @@ public class FirstSwingExample {
                 });
 
                 lunchFrame.add(lunch_item4);
+                JButton back = new JButton("BACK");
+                back.setBounds(2, 462, 453, 48);
+                lunchFrame.add(back);
+                back.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        f.setVisible(true);
+                        lunchFrame.setVisible(false);
+                    }
+                });
+                
 
                 lunchFrame.setVisible(true);
             }
@@ -385,9 +405,10 @@ public class FirstSwingExample {
                 JFrame dinnerframe = new JFrame("DINNER");
                 dinnerframe.getContentPane().setBackground(Color.decode("#85efff"));
                 dinnerframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                dinnerframe.setSize(460, 500);// 400 width and 500 height
+                dinnerframe.setSize(460, 550);// 400 width and 500 height
                 dinnerframe.setLayout(null);// using no layout managers
                 dinnerframe.setResizable(false);
+                f.setVisible(false);
                 JButton dinner_item1 = new JButton(new ImageIcon("rajma.png"));
                 dinner_item1.setBounds(5, 0, 450, 113);
                 dinner_item1.addActionListener(new ActionListener() {
@@ -520,8 +541,16 @@ public class FirstSwingExample {
                     }
                 });
                 dinnerframe.add(dinner_item4);
-                
-
+                JButton back = new JButton("BACK");
+                back.setBounds(2, 462, 453, 48);
+                dinnerframe.add(back);
+                back.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        f.setVisible(true);
+                        dinnerframe.setVisible(false);
+                    }
+                });
                 dinnerframe.setVisible(true);
             }
 
@@ -551,9 +580,10 @@ public class FirstSwingExample {
                 JFrame sweetframe = new JFrame("SWEET");
                 sweetframe.getContentPane().setBackground(Color.decode("#85efff"));
                 sweetframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                sweetframe.setSize(460, 500);// 400 width and 500 height
+                sweetframe.setSize(460, 550);// 400 width and 500 height
                 sweetframe.setLayout(null);// using no layout managers
                 sweetframe.setResizable(false);
+                f.setVisible(false);
 
                 JButton sweet_item1 = new JButton(new ImageIcon("modak.png"));
                 sweet_item1.setBounds(5, 0, 450, 113);
@@ -686,10 +716,17 @@ public class FirstSwingExample {
                     }
                 });
                 sweetframe.add(sweet_item4);
-                
-
-
-
+                JButton back = new JButton("BACK");
+                back.setBounds(2, 462, 453, 48);
+               
+                sweetframe.add(back);
+                back.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        f.setVisible(true);
+                        sweetframe.setVisible(false);
+                    }
+                });
                 sweetframe.setVisible(true);
             }
 
